@@ -1,8 +1,6 @@
 import type { Preview } from '@storybook/vue3'
 import { withThemeByClassName } from '@storybook/addon-styling'
 import { useArgs } from '@storybook/preview-api'
-
-/* TODO: update import to your tailwind styles file. If you're using Angular, inject this through your angular.json config instead */
 import '../src/style.css'
 
 const preview: Preview = {
