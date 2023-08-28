@@ -15,6 +15,6 @@ export const Primary: Story = {
     title: 'Kill Bill: Vol 2',
     genres: ['Oscar winning movie', 'Action'],
     releaseYear: '1994',
-    postUrl: '@/assets/kill-bill.png'
+    postUrl: 'https://img2.doubanio.com/view/photo/l/public/p1910897532.webp'
   }
 }

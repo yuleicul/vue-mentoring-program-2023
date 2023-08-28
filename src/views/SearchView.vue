@@ -7,37 +7,37 @@ const MOVIES = [
     title: 'Kill Bill: Vol 2',
     genres: ['Oscar winning movie', 'Action'],
     releaseYear: '1994',
-    postUrl: '@/assets/kill-bill.png'
+    postUrl: 'https://img2.doubanio.com/view/photo/l/public/p1910897532.webp'
   },
   {
-    title: 'Kill Bill: Vol 2',
-    genres: ['Oscar winning movie', 'Action'],
+    title: 'The Shawshank Redemption',
+    genres: ['Drama', 'Crime'],
     releaseYear: '1994',
-    postUrl: '@/assets/kill-bill.png'
+    postUrl: 'https://img2.doubanio.com/view/photo/l/public/p480747492.webp'
   },
   {
-    title: 'Kill Bill: Vol 2',
-    genres: ['Oscar winning movie', 'Action'],
-    releaseYear: '1994',
-    postUrl: '@/assets/kill-bill.png'
+    title: 'The Godfather',
+    genres: ['Drama', 'Crime'],
+    releaseYear: '1972',
+    postUrl: 'https://img2.doubanio.com/view/photo/m/public/p1302620183.webp'
   },
   {
-    title: 'Kill Bill: Vol 2',
-    genres: ['Oscar winning movie', 'Action'],
-    releaseYear: '1994',
-    postUrl: '@/assets/kill-bill.png'
+    title: 'The Dark Knight',
+    genres: ['Action', 'Crime', 'Drama'],
+    releaseYear: '2008',
+    postUrl: 'https://img2.doubanio.com/view/photo/s_ratio_poster/public/p462657443.webp'
   },
   {
-    title: 'Kill Bill: Vol 2',
-    genres: ['Oscar winning movie', 'Action'],
+    title: 'Pulp Fiction',
+    genres: ['Crime', 'Drama'],
     releaseYear: '1994',
-    postUrl: '@/assets/kill-bill.png'
+    postUrl: 'https://img2.doubanio.com/view/photo/s_ratio_poster/public/p1910902213.webp'
   },
   {
-    title: 'Kill Bill: Vol 2',
-    genres: ['Oscar winning movie', 'Action'],
+    title: 'Forrest Gump',
+    genres: ['Drama', 'Romance'],
     releaseYear: '1994',
-    postUrl: '@/assets/kill-bill.png'
+    postUrl: 'https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2372307693.webp'
   }
 ]
 </script>

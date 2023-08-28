@@ -9,7 +9,7 @@ const { movies } = defineProps<{
 
 <template>
   <div class="bg-netflix-gray-23 px-16 py-16 flex flex-wrap gap-14">
-    <div v-for="movie in movies" class="mb-12">
+    <div v-for="movie in movies">
       <MovieCard
         :title="movie.title"
         :releaseYear="movie.releaseYear"
