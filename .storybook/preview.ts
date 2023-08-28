@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/vue3'
-
 import { withThemeByClassName } from '@storybook/addon-styling'
+import { useArgs } from '@storybook/preview-api'
 
 /* TODO: update import to your tailwind styles file. If you're using Angular, inject this through your angular.json config instead */
 import '../src/style.css'
@@ -25,7 +25,29 @@ const preview: Preview = {
         dark: 'dark'
       },
       defaultTheme: 'light'
-    })
+    }),
+
+    /**
+     * Support `v-model` for vue
+     * @see {@link https://craigbaldwin.com/blog/updating-args-storybook-vue/}
+     */
+    (story, context) => {
+      const [args, updateArgs] = useArgs()
+      if ('modelValue' in args) {
+        const update = args['onUpdate:model-value'] || args['onUpdate:modelValue']
+        args['onUpdate:model-value'] = undefined
+        args['onUpdate:modelValue'] = (...vals) => {
+          update?.(...vals)
+          /**
+           * Arg with `undefined` will be deleted by `deleteUndefined()`, then loss of reactive
+           * @see {@link https://github.com/storybookjs/storybook/blob/next/code/lib/preview-api/src/modules/store/ArgsStore.ts#L63}
+           */
+          const modelValue = vals[0] === undefined ? null : vals[0]
+          updateArgs({ modelValue })
+        }
+      }
+      return story({ ...context, updateArgs })
+    }
   ]
 }
 
