@@ -5,7 +5,7 @@ import { onMounted, ref, watch } from 'vue'
 export type SearchBy = 'title' | 'genre'
 export type SortBy = 'rating' | 'release date'
 
-export function useSearch(emit: (e: 'search', result: Movie[]) => void) {
+export function useMovies(emit: (e: 'search', result: Movie[]) => void) {
   const searchInput = ref('')
   const searchBy = ref<SearchBy>('title')
   const sortBy = ref<SortBy>('rating')

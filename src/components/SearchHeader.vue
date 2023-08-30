@@ -3,13 +3,13 @@ import Logo from './Logo.vue'
 import RadioButton from './RadioButton.vue'
 import SearchButton from './SearchButton.vue'
 import SearchInput from './SearchInput.vue'
-import { useSearch } from '../composables/useSearch.ts'
+import { useMovies } from '../composables/useMovies.ts'
 import type { Movie } from './MovieCard.vue'
 
 const emit = defineEmits<{
   (e: 'search', result: Movie[]): void
 }>()
-const { searchInput, searchBy, sortBy, searchResult, search } = useSearch(emit)
+const { searchInput, searchBy, sortBy, searchResult, search } = useMovies(emit)
 </script>
 
 <template>

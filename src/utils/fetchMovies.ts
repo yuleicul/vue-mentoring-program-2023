@@ -1,4 +1,4 @@
-import type { SearchBy, SortBy } from '../composables/useSearch.ts'
+import type { SearchBy, SortBy } from '../composables/useMovies.js'
 
 const MOCK_DATA = [
   {
