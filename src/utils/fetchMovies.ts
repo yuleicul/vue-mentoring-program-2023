@@ -72,12 +72,6 @@ const MOCK_DATA = [
     genres: ['Drama', 'Mystery', 'Thriller'],
     releaseYear: '2006',
     postUrl: 'https://img2.doubanio.com/view/photo/s_ratio_poster/public/p480383375.webp'
-  },
-  {
-    title: 'The Social Network',
-    genres: ['Biography', 'Drama'],
-    releaseYear: '2010',
-    postUrl: 'https://img2.doubanio.com/view/photo/s_ratio_poster/public/p462657443.webp'
   }
 ]
 
