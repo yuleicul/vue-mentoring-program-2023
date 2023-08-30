@@ -1,4 +1,4 @@
-import type { SearchBy, SortBy } from '@/components/SearchHeader.vue'
+import type { SearchBy, SortBy } from '../composables/useSearch.ts'
 
 const MOCK_DATA = [
   {

@@ -1,38 +1,15 @@
 <script lang="ts" setup>
-import { onMounted, ref, watch } from 'vue'
 import Logo from './Logo.vue'
 import RadioButton from './RadioButton.vue'
 import SearchButton from './SearchButton.vue'
 import SearchInput from './SearchInput.vue'
+import { useSearch } from '../composables/useSearch.ts'
 import type { Movie } from './MovieCard.vue'
-import fetchMovies from '../utils/fetchMovies.ts'
-
-export type SearchBy = 'title' | 'genre'
-export type SortBy = 'rating' | 'release date'
-
-const searchInput = ref('')
-const searchBy = ref<SearchBy>('title')
-const sortBy = ref<SortBy>('rating')
-const searchResult = ref<Movie[]>([])
 
 const emit = defineEmits<{
   (e: 'search', result: Movie[]): void
 }>()
-
-watch(sortBy, async (value) => {
-  searchResult.value = await fetchMovies(searchInput.value, searchBy.value, value)
-  emit('search', searchResult.value)
-})
-
-const search = async () => {
-  searchResult.value = await fetchMovies(searchInput.value, searchBy.value, sortBy.value)
-  emit('search', searchResult.value)
-}
-
-onMounted(async () => {
-  searchResult.value = await fetchMovies(searchInput.value, searchBy.value, sortBy.value)
-  emit('search', searchResult.value)
-})
+const { searchInput, searchBy, sortBy, searchResult, search } = useSearch(emit)
 </script>
 
 <template>
