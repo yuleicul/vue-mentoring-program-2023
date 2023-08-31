@@ -1,3 +1,4 @@
+import type { Movie } from '@/components/MovieCard.vue'
 import type { SearchBy, SortBy } from '../composables/useMovies.js'
 
 const MOCK_DATA = [
@@ -76,13 +77,23 @@ const MOCK_DATA = [
 ]
 
 export default async function fetchMovies(input: string, searchBy: SearchBy, sortBy: SortBy) {
-  return MOCK_DATA.filter((movie) => {
+  const filteredMovies = filterMovies(input, searchBy, MOCK_DATA)
+  const sortedMovies = sortMovies(sortBy, filteredMovies)
+  return sortedMovies
+}
+
+function filterMovies(input: string, searchBy: SearchBy, movies: Movie[]) {
+  return movies.filter((movie) => {
     if (searchBy === 'title') {
       return movie.title.toLowerCase().includes(input.toLowerCase())
     } else if (searchBy === 'genre') {
       return movie.genres.join(' ').toLowerCase().includes(input.toLowerCase())
     }
-  }).sort((prev, curr) => {
+  })
+}
+
+function sortMovies(sortBy: SortBy, movies: Movie[]) {
+  return movies.sort((prev, curr) => {
     if (sortBy === 'release date') {
       return +curr.releaseYear - +prev.releaseYear
     }
