@@ -1,6 +1,6 @@
 <script lang="ts" setup>
+import type { Movie } from '@/stores/movies'
 import { type Directive } from 'vue'
-import { type Movie } from '../utils/fetchMovies'
 
 export type MovieCardProps = Pick<Movie, 'title' | 'year' | 'genres' | 'posterurl'>
 

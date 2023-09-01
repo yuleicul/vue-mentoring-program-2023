@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { Movie } from '@/utils/fetchMovies'
+import type { Movie } from '@/stores/movies'
 import Logo from './Logo.vue'
 
 const { movie } = defineProps<{ movie: Movie }>()
 const emit = defineEmits<{
-  (e: 'click'): void
+  (e: 'backToSearch'): void
 }>()
 </script>
 
@@ -13,7 +13,7 @@ const emit = defineEmits<{
     <div class="backdrop-blur-sm backdrop-brightness-[0.1] px-16 py-4">
       <div class="flex justify-between">
         <Logo />
-        <div @click="emit('click')" class="cursor-pointer text-2xl">🔍</div>
+        <div @click="emit('backToSearch')" class="cursor-pointer text-2xl">🔍</div>
       </div>
       <div class="flex py-10 gap-16 items-center">
         <div class="h-96 w-72 flex-shrink-0">
