@@ -11,6 +11,7 @@ const { movies } = defineProps<{
   <div class="bg-netflix-gray-23 px-16 py-16 flex flex-wrap gap-14">
     <div v-for="movie in movies">
       <MovieCard
+        :key="movie.postUrl"
         :title="movie.title"
         :releaseYear="movie.releaseYear"
         :genres="movie.genres"

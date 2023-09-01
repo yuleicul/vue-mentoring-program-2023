@@ -1,18 +1,15 @@
 <script lang="ts" setup>
-import { reactive, ref } from 'vue'
 import Logo from './Logo.vue'
 import RadioButton from './RadioButton.vue'
 import SearchButton from './SearchButton.vue'
 import SearchInput from './SearchInput.vue'
+import { useMovies } from '../composables/useMovies.ts'
+import type { Movie } from './MovieCard.vue'
 
-const searchInput = ref('')
-const searchBy = ref('title')
-const sortBy = ref('rating')
-const searchResult = reactive({ total: 7 })
-
-const search = () => {
-  console.log('Click search', searchInput.value, searchBy.value, sortBy.value)
-}
+const emit = defineEmits<{
+  (e: 'search', result: Movie[]): void
+}>()
+const { searchInput, searchBy, sortBy, searchResult, search } = useMovies(emit)
 </script>
 
 <template>
@@ -22,7 +19,7 @@ const search = () => {
       <div class="px-14 py-14">
         <div class="text-4xl uppercase font-light text-white mb-9">Find your movie</div>
         <div class="flex gap-3 mb-5">
-          <SearchInput v-model="searchInput" />
+          <SearchInput v-model="searchInput" @keyup.enter="search" />
           <SearchButton @click="search" />
         </div>
         <div>
@@ -34,7 +31,7 @@ const search = () => {
   </div>
 
   <div class="h-[70px] flex items-center mx-32 justify-between">
-    <div class="text-white font-bold">{{ searchResult.total }} movies found</div>
+    <div class="text-white font-bold">{{ searchResult.length }} movies found</div>
     <div>
       <span class="uppercase text-white/70 mr-4">Sort by</span>
       <RadioButton name="sort-by" :ids="['release date', 'rating']" v-model="sortBy" />
