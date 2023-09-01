@@ -3,8 +3,8 @@ import Logo from './Logo.vue'
 import RadioButton from './RadioButton.vue'
 import SearchButton from './SearchButton.vue'
 import SearchInput from './SearchInput.vue'
-import { useMovies } from '../composables/useMovies.ts'
-import type { Movie } from './MovieCard.vue'
+import { useMovies } from '../composables/useMovies'
+import type { Movie } from '../utils/fetchMovies'
 
 const emit = defineEmits<{
   (e: 'search', result: Movie[]): void

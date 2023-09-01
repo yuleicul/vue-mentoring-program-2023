@@ -1,13 +1,10 @@
 <script lang="ts" setup>
 import { type Directive } from 'vue'
+import { type Movie } from '../utils/fetchMovies'
 
-export type Movie = {
-  title: string
-  releaseYear: string
-  genres: string[]
-  postUrl: string
-}
-const { title, releaseYear, genres, postUrl } = defineProps<Movie>()
+export type MovieCardProps = Pick<Movie, 'title' | 'releaseYear' | 'genres' | 'postUrl'>
+
+const { title, releaseYear, genres, postUrl } = defineProps<MovieCardProps>()
 let observer: IntersectionObserver | null = null
 const vLazyload: Directive<HTMLImageElement, string> = {
   mounted: (el, { value }) => {

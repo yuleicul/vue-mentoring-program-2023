@@ -1,10 +1,22 @@
 <script lang="ts" setup>
-import type { Movie } from './MovieCard.vue'
+import { ref } from 'vue'
+import type { Movie } from '../utils/fetchMovies'
 import MovieCard from './MovieCard.vue'
+import fetchMovies from '../utils/fetchMovies'
 
 const { movies } = defineProps<{
   movies: Movie[]
 }>()
+const emit = defineEmits<{
+  (e: 'click', movie: Movie): void
+}>()
+
+// @Todo with piana
+const moviesSearchedByGenre = ref<Movie[]>()
+const searchByGenre = async (movie: Movie) => {
+  moviesSearchedByGenre.value = await fetchMovies(movie.genres[0], 'genre', 'rating')
+  emit('click', movie)
+}
 </script>
 
 <template>
@@ -16,6 +28,7 @@ const { movies } = defineProps<{
         :releaseYear="movie.releaseYear"
         :genres="movie.genres"
         :postUrl="movie.postUrl"
+        @click="() => searchByGenre(movie)"
       />
     </div>
   </div>

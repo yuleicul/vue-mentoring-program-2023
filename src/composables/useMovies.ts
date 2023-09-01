@@ -1,5 +1,4 @@
-import type { Movie } from '@/components/MovieCard.vue'
-import fetchMovies from '@/utils/fetchMovies'
+import fetchMovies, { type Movie } from '@/utils/fetchMovies'
 import { onMounted, ref, watch } from 'vue'
 
 export type SearchBy = 'title' | 'genre'
