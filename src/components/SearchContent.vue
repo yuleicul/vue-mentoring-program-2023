@@ -1,15 +1,14 @@
 <script lang="ts" setup>
+import type { Movie } from '@/stores/types'
 import MovieCard from './MovieCard.vue'
-import { useMoviesStore, type Movie } from '@/stores/movies'
+import { useMoviesStore } from '@/stores/movies'
+import { useMovieDetailStore } from '@/stores/movieDetail'
 
 const moviesStore = useMoviesStore()
-const emit = defineEmits<{
-  (e: 'click', movie: Movie): void
-}>()
-
+const movieDetailStore = useMovieDetailStore()
 const searchByGenre = async (movie: Movie) => {
+  movieDetailStore.setMovie(movie)
   moviesStore.fetchMovies(movie.genres[0], 'genre', 'release date')
-  emit('click', movie)
   window.scrollTo(0, 0)
 }
 </script>

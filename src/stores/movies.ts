@@ -1,16 +1,7 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import type { SearchBy, SortBy } from '@/composables/useMovies'
-
-export type Movie = {
-  title: string
-  year: string
-  genres: string[]
-  posterurl: string
-  imdbRating: number
-  duration: string
-  storyline: string
-}
+import type { Movie } from './types'
 
 export const useMoviesStore = defineStore('movies', () => {
   const movies = ref<Movie[]>([])

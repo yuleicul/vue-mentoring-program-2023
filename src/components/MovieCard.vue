@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { Movie } from '@/stores/movies'
+import type { Movie } from '@/stores/types'
 import { type Directive } from 'vue'
 
 export type MovieCardProps = Pick<Movie, 'title' | 'year' | 'genres' | 'posterurl'>
