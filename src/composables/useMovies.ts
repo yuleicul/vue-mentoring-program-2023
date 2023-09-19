@@ -1,36 +1,32 @@
-import type { Movie } from '@/components/MovieCard.vue'
-import fetchMovies from '@/utils/fetchMovies'
+import { useMoviesStore } from '@/stores/movies'
 import { onMounted, ref, watch } from 'vue'
 
 export type SearchBy = 'title' | 'genre'
 export type SortBy = 'rating' | 'release date'
 
-export function useMovies(emit: (e: 'search', result: Movie[]) => void) {
+export function useMovies() {
   const searchInput = ref('')
   const searchBy = ref<SearchBy>('title')
-  const sortBy = ref<SortBy>('rating')
-  const searchResult = ref<Movie[]>([])
+  const sortBy = ref<SortBy>('release date')
 
-  watch(sortBy, async (value) => {
-    searchResult.value = await fetchMovies(searchInput.value, searchBy.value, value)
-    emit('search', searchResult.value)
+  const { fetchMovies } = useMoviesStore()
+
+  watch(sortBy, (value) => {
+    fetchMovies(searchInput.value, searchBy.value, value)
   })
 
-  const search = async () => {
-    searchResult.value = await fetchMovies(searchInput.value, searchBy.value, sortBy.value)
-    emit('search', searchResult.value)
+  const search = () => {
+    fetchMovies(searchInput.value, searchBy.value, sortBy.value)
   }
 
   onMounted(async () => {
-    searchResult.value = await fetchMovies(searchInput.value, searchBy.value, sortBy.value)
-    emit('search', searchResult.value)
+    fetchMovies(searchInput.value, searchBy.value, sortBy.value)
   })
 
   return {
     searchInput,
     searchBy,
     sortBy,
-    searchResult,
     search
   }
 }

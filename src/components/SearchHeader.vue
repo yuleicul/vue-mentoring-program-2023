@@ -3,13 +3,11 @@ import Logo from './Logo.vue'
 import RadioButton from './RadioButton.vue'
 import SearchButton from './SearchButton.vue'
 import SearchInput from './SearchInput.vue'
-import { useMovies } from '../composables/useMovies.ts'
-import type { Movie } from './MovieCard.vue'
+import { useMovies } from '../composables/useMovies'
+import { useMoviesStore } from '@/stores/movies'
 
-const emit = defineEmits<{
-  (e: 'search', result: Movie[]): void
-}>()
-const { searchInput, searchBy, sortBy, searchResult, search } = useMovies(emit)
+const { searchInput, searchBy, sortBy, search } = useMovies()
+const moviesStore = useMoviesStore()
 </script>
 
 <template>
@@ -31,7 +29,7 @@ const { searchInput, searchBy, sortBy, searchResult, search } = useMovies(emit)
   </div>
 
   <div class="h-[70px] flex items-center mx-32 justify-between">
-    <div class="text-white font-bold">{{ searchResult.length }} movies found</div>
+    <div class="text-white font-bold">{{ moviesStore.movies.length }} movies found</div>
     <div>
       <span class="uppercase text-white/70 mr-4">Sort by</span>
       <RadioButton name="sort-by" :ids="['release date', 'rating']" v-model="sortBy" />
