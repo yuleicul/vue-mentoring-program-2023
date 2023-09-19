@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import Logo from './Logo.vue'
 import { useMovieDetailStore } from '@/stores/movieDetail'
 import { storeToRefs } from 'pinia'
+import NetflixLogo from './NetflixLogo.vue'
 
 const movieDetailStore = useMovieDetailStore()
 const { movie } = storeToRefs(movieDetailStore)
@@ -12,7 +12,7 @@ const { movie } = storeToRefs(movieDetailStore)
     <div class="bg-[url(@/assets/header-bg.png)] bg-center bg-cover">
       <div class="backdrop-blur-sm backdrop-brightness-[0.1] px-16 py-4">
         <div class="flex justify-between">
-          <Logo />
+          <NetflixLogo />
           <div @click="movieDetailStore.setMovie(null)" class="cursor-pointer text-2xl">🔍</div>
         </div>
         <div class="flex py-10 gap-16 items-center">

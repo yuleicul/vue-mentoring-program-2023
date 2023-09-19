@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import Logo from './Logo.vue'
 import RadioButton from './RadioButton.vue'
 import SearchButton from './SearchButton.vue'
 import SearchInput from './SearchInput.vue'
 import { useMovies } from '../composables/useMovies'
 import { useMoviesStore } from '@/stores/movies'
+import NetflixLogo from './NetflixLogo.vue'
 
 const { searchInput, searchBy, sortBy, search } = useMovies()
 const moviesStore = useMoviesStore()
@@ -13,7 +13,7 @@ const moviesStore = useMoviesStore()
 <template>
   <div class="bg-[url(@/assets/header-bg.png)] bg-center bg-cover">
     <div class="backdrop-blur-sm backdrop-brightness-50 px-16 py-4">
-      <Logo />
+      <NetflixLogo />
       <div class="px-14 py-14">
         <div class="text-4xl uppercase font-light text-white mb-9">Find your movie</div>
         <div class="flex gap-3 mb-5">

@@ -2,8 +2,8 @@
 import SearchHeader from '../components/SearchHeader.vue'
 import SearchContent from '../components/SearchContent.vue'
 import MovieDetail from '../components/MovieDetail.vue'
-import Logo from '../components/Logo.vue'
 import { useMovieDetailStore } from '@/stores/movieDetail'
+import NetflixLogo from '@/components/NetflixLogo.vue'
 
 const movieDetailStore = useMovieDetailStore()
 </script>
@@ -15,7 +15,7 @@ const movieDetailStore = useMovieDetailStore()
       <SearchHeader v-else />
       <SearchContent />
       <div class="flex items-center justify-center h-16 bg-netflix-gray-42">
-        <Logo />
+        <NetflixLogo />
       </div>
     </div>
   </div>
