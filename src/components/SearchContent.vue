@@ -15,15 +15,14 @@ const searchByGenre = async (movie: Movie) => {
 
 <template>
   <div class="bg-netflix-gray-23 px-16 py-16 flex flex-wrap gap-14">
-    <div v-for="movie in moviesStore.movies">
-      <MovieCard
-        :key="movie.posterurl"
-        :title="movie.title"
-        :year="movie.year"
-        :genres="movie.genres"
-        :posterurl="movie.posterurl"
-        @click="() => searchByGenre(movie)"
-      />
-    </div>
+    <MovieCard
+      v-for="movie in moviesStore.movies"
+      :key="movie.posterurl"
+      :title="movie.title"
+      :year="movie.year"
+      :genres="movie.genres"
+      :posterurl="movie.posterurl"
+      @click="() => searchByGenre(movie)"
+    />
   </div>
 </template>

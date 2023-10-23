@@ -7,10 +7,10 @@ export const useMoviesStore = defineStore('movies', () => {
   const movies = ref<Movie[]>([])
 
   async function fetchMovies(input: string, searchBy: SearchBy, sortBy: SortBy) {
-    const data = await fetch('https://tame-erin-pike-toga.cyclic.app/movies').then((res) =>
-      res.json()
-    )
-    const filteredMovies = filterMovies(input, searchBy, data)
+    const data = await fetch(
+      'https://raw.githubusercontent.com/cetrix13/react-mentoring-movies-list-fake-api-/master/movies.json'
+    ).then((res) => res.json())
+    const filteredMovies = filterMovies(input, searchBy, data.movies)
     const sortedMovies = sortMovies(sortBy, filteredMovies)
     movies.value = sortedMovies
   }

@@ -19,7 +19,7 @@ const picked = computed({
 </script>
 
 <template>
-  <span v-for="(id, index) in props.ids">
+  <span v-for="(id, index) in props.ids" :key="id">
     <input
       class="appearance-none"
       type="radio"

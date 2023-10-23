@@ -6,8 +6,12 @@ import { useMovies } from '../composables/useMovies'
 import { useMoviesStore } from '@/stores/movies'
 import NetflixLogo from './NetflixLogo.vue'
 
-const { searchInput, searchBy, sortBy, search } = useMovies()
+const { searchInput, searchBy, sortBy } = useMovies()
 const moviesStore = useMoviesStore()
+
+const search = () => {
+  moviesStore.fetchMovies(searchInput.value, searchBy.value, sortBy.value)
+}
 </script>
 
 <template>
