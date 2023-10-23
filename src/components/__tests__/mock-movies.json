@@ -1,0 +1,38 @@
+[
+  {
+    "year": "1994",
+    "genres": ["Crime", "Drama"],
+    "ratings": [
+      2, 9, 7, 7, 7, 2, 2, 4, 1, 9, 6, 3, 4, 10, 8, 6, 7, 5, 9, 4, 3, 5, 9, 3, 8, 2, 6, 7, 4, 4
+    ],
+    "poster": "MV5BMTkxMTA5OTAzMl5BMl5BanBnXkFtZTgwNjA5MDc3NjE@._V1_SY500_CR0,0,336,500_AL_.jpg",
+    "contentRating": "15",
+    "duration": "PT154M",
+    "releaseDate": "1994-11-25",
+    "averageRating": 0,
+    "storyline": "Jules Winnfield (Samuel L. Jackson) and Vincent Vega (John Travolta) are two hit men who are out to retrieve a suitcase stolen from their employer, mob boss Marsellus Wallace (Ving Rhames). Wallace has also asked Vincent to take his wife Mia (Uma Thurman) out a few days later when Wallace himself will be out of town. Butch Coolidge (Bruce Willis) is an aging boxer who is paid by Wallace to lose his weight. The lives of these seemingly unrelated people are woven together comprising of a series of funny, bizarre and uncalled-for incidents.                Written by\nSoumitra",
+    "actors": ["John Travolta", "Uma Thurman", "Samuel L. Jackson"],
+    "imdbRating": 8.9,
+    "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTkxMTA5OTAzMl5BMl5BanBnXkFtZTgwNjA5MDc3NjE@._V1_SY500_CR0,0,336,500_AL_.jpg",
+    "id": 7,
+    "title": "Pulp Fiction"
+  },
+  {
+    "year": "1958",
+    "genres": ["Mystery", "Romance", "Thriller"],
+    "ratings": [
+      3, 8, 2, 9, 8, 8, 1, 6, 10, 5, 1, 7, 6, 6, 2, 8, 3, 3, 4, 1, 6, 8, 1, 6, 9, 5, 7, 4, 9, 2
+    ],
+    "poster": "MV5BYTE4ODEwZDUtNDFjOC00NjAxLWEzYTQtYTI1NGVmZmFlNjdiL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SY500_CR0,0,322,500_AL_.jpg",
+    "contentRating": "15",
+    "duration": "PT128M",
+    "releaseDate": "1958-12-26",
+    "averageRating": 0,
+    "storyline": "John \"Scottie\" Ferguson is a retired San Francisco police detective who suffers from acrophobia and Madeleine is the lady who leads him to high places. A wealthy shipbuilder who is an acquaintance from college days approaches Scottie and asks him to follow his beautiful wife, Madeleine. He fears she is going insane, maybe even contemplating suicide, he believes she is possessed by a dead ancestor. Scottie is skeptical, but agrees after he sees the beautiful Madeleine.                Written by\nfilmfactsman",
+    "actors": ["James Stewart", "Kim Novak", "Barbara Bel Geddes"],
+    "imdbRating": 8.4,
+    "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BYTE4ODEwZDUtNDFjOC00NjAxLWEzYTQtYTI1NGVmZmFlNjdiL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SY500_CR0,0,322,500_AL_.jpg",
+    "id": 73,
+    "title": "Vertigo"
+  }
+]

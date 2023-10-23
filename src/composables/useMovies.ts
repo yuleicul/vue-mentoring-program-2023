@@ -15,10 +15,6 @@ export function useMovies() {
     fetchMovies(searchInput.value, searchBy.value, value)
   })
 
-  const search = () => {
-    fetchMovies(searchInput.value, searchBy.value, sortBy.value)
-  }
-
   onMounted(async () => {
     fetchMovies(searchInput.value, searchBy.value, sortBy.value)
   })
@@ -26,7 +22,6 @@ export function useMovies() {
   return {
     searchInput,
     searchBy,
-    sortBy,
-    search
+    sortBy
   }
 }

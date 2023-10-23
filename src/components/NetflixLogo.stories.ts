@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import Logo from './Logo.vue'
+import NetflixLogo from './NetflixLogo.vue'
 
 const meta = {
-  title: 'Netflix/Logo',
-  component: Logo,
+  title: 'Netflix/NetflixLogo',
+  component: NetflixLogo,
   tags: ['autodocs']
-} satisfies Meta<typeof Logo>
+} satisfies Meta<typeof NetflixLogo>
 
 export default meta
 type Story = StoryObj<typeof meta>
